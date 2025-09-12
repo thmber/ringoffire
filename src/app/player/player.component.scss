@@ -1,0 +1,233 @@
+.player-display{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    color: white;
+    width: 320px;
+    height: 50px;
+    justify-content: space-between;
+    .bottle{
+        width: 130px;
+        height: 50px;
+        object-fit: contain;
+    }
+    span{
+        font-size: 22px;
+    }
+}
+.profile-image-box{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+}
+.player-display-left{
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.4);
+    span{
+        padding-right: 15px;
+    }
+
+}
+.player-display-right{
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.4);
+    right: 0px;
+    .bottle{
+        transform: rotate(180deg);
+    }
+    span{
+        padding-left: 15px;
+    }
+}
+
+//************************ animations: the bottles are animated, and the containing div is made smaller *************************+
+.players-turn-right{
+    animation: makeSmaller 225ms forwards;
+    animation-delay: 95ms;
+    @keyframes makeSmaller {
+        0%{width: 320px;}
+        100%{width: 180px;}
+    }
+}
+.players-turn-left{
+    justify-content: flex-end;
+    animation: makeSmaller 225ms forwards;
+    animation-delay: 95ms;
+    @keyframes makeSmaller {
+        0%{width: 320px;}
+        100%{width: 180px;}
+    }
+}
+.animateBottle-left{
+    animation: yourTurnLeft 225ms forwards;
+        @keyframes yourTurnLeft {
+            0%{}
+             20%{transform: translate(360px, 0) rotate(90deg);}
+             100%{transform: translate(235px, 0) rotate(180deg);}
+        }
+}
+.animateBottle-right{
+    animation: yourTurnRight 225ms forwards;
+        @keyframes yourTurnRight {
+            0%{}
+            20%{transform: translate(-360px, 0) rotate(270deg);}
+            100%{transform: translate(-248px, 0) rotate(360deg);}
+        }
+}
+
+//***************  background-colors: to match the style of the bottle, each bottle has a pre-chosen background-color *******************
+.background-color0{
+    background-color: black;
+}
+.background-color1{
+    background-color: rgb(132, 167, 209);
+}
+.background-color2{
+    background-color: rgb(5, 32, 8);
+}
+.background-color3{
+    background-color: rgb(240, 158, 151);
+}
+.background-color4{
+    background-color: rgb(4, 65, 159);
+}
+.background-color5{
+    background-color: rgb(198, 40, 29);
+}
+.background-color6{
+    background-color: rgb(80, 54, 74);
+}
+.background-color7{
+    background-color: rgb(98, 173, 45);
+}
+.background-color8{
+    background-color: rgb(173, 172, 165);
+}
+.background-color9{
+    background-color: rgb(225, 184, 125);
+}
+.background-color10{
+    background-color: rgb(191, 191, 36);
+}
+.background-color11{
+    background-color: rgb(255, 185, 56);
+}
+.background-color12{
+    background-color:  orange;
+}
+.background-color13{
+    background-color: rgb(33, 39, 66);
+}
+.background-color14{
+    background-color: rgb(138, 79, 247);
+}
+.background-color15{
+    background-color: rgb(255, 79, 125);
+}
+.background-color16{
+    background-color: rgb(50, 44, 68);
+}
+.background-color17{
+    background-color: rgb(255, 99, 43)
+}
+.background-color18{
+    background-color: rgb(242, 234, 0);
+}
+.background-color19{
+    background-color: rgb(73, 140, 188);
+}
+.background-color20{
+    background-color: rgb(29, 109, 17);
+}
+//******************************************************  mobile screens *****************************************************
+
+@media only screen and (max-width: 900px){
+    .player-display{
+        width: 180px;
+        height: 40px;
+        .bottle{
+            width: 65px;
+            height: auto;
+        }
+        span{
+            font-size: 15px;
+        }
+    }
+    .profile-image-box{
+        img{
+            width: 32px;
+            height: 32px;
+        }
+    }
+    .animateBottle-left{
+        animation: yourTurnLeftSmallLeft 225ms forwards;
+            @keyframes yourTurnLeftSmallLeft {
+                0%{}
+                 20%{transform: translate(360px, 0) rotate(90deg);}
+                 100%{transform: translate(150px, 0) rotate(180deg);}
+            }
+    }
+    .animateBottle-right{
+        animation: yourTurnRightSmallRight 225ms forwards;
+            @keyframes yourTurnRightSmallRight {
+                0%{}
+                20%{transform: translate(-360px, 0) rotate(270deg);}
+                100%{transform: translate(-190px, 0) rotate(360deg);}
+            }
+    }
+    .profile-image-box{
+        width: 80px;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .player-display{
+        width: 150px;
+        height: 30px;
+        justify-content: space-between;
+        .bottle{
+            width: 55px;
+            object-fit: contain;
+        }
+        span{
+            font-size: 12px;
+        }
+    }
+    .players-turn-right{
+        animation: makeevenSmallerRight 225ms forwards;
+        animation-delay: 95ms;
+        @keyframes makeevenSmallerRight {
+            0%{width: 180px;}
+            100%{width: 120px;}
+        }
+    }
+    .players-turn-left{
+        justify-content: flex-end;
+        animation: makeevenSmallerleft 225ms forwards;
+        animation-delay: 95ms;
+        @keyframes makeevenSmallerleft {
+            0%{width: 180px;}
+            100%{width: 120px;}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

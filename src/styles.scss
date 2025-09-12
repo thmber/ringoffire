@@ -1,0 +1,28 @@
+*{
+    font-family: Unkempt !important;
+    :checked{background-color: green;}
+}
+body{
+    margin: 0;
+    
+}
+
+
+@font-face {
+    font-family: Alfas;
+    src: url(./../src/assets/fonts/AlfaSlabOne-Regular.ttf);
+}
+@font-face {
+    font-family: Unkempt;
+    src: url(./../src/assets/fonts/Unkempt-Regular.ttf);
+}
+@font-face {
+    font-family: Unkempt-bold;
+    src: url(./../src/assets/fonts/Unkempt-Bold.ttf);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+

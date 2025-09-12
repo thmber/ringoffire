@@ -1,0 +1,24 @@
+<!-- here two differend player-bars are generated, each on the left, then on the right site 
+    if the player is active an animation class is added-->
+   <div class="player-box">
+    @if(position % 2 == 0){
+        <div (click)="animateBottleLeft()" [ngClass]="{'players-turn-left': playerActive == true}" 
+        class="player-display player-display-left background-color{{ background }}">
+            <img class="bottle" [ngClass]="{'animateBottle-left': playerActive == true}" src="./assets/img/bottles/bottle_{{ background }}.png" alt="">
+            <div class="profile-image-box">
+                <span>{{ name }}</span>
+                <img src="./assets/img/profilepic/{{ profilePic }}.png" alt="">
+            </div>
+        </div>
+    }
+    @else(){
+        <div (click)="animateBottleRight()" [ngClass]="{'players-turn-right': playerActive == true}" 
+        class="player-display player-display-right background-color{{ background }}">
+            <div class="profile-image-box">
+                <img src="./assets/img/profilepic/{{ profilePic }}.png" alt="">
+                <span>{{ name }}</span>
+            </div>
+                <img class="bottle" [ngClass]="{'animateBottle-right': playerActive == true}" src="./assets/img/bottles/bottle_{{ background }}.png" alt="">
+        </div>
+    }
+   </div>

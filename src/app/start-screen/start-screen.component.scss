@@ -1,0 +1,90 @@
+.start-screen{
+    background-image: url(./../../assets/img/bottles.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    font-family: Alfas;
+    justify-content: center;
+    align-items: center;
+    .bottle-cap{
+        position: relative;
+        transition: transform .7s ease-in-out;
+        &:hover{
+            transform: rotate(2turn);
+        }
+        img{
+            width: 28vw;
+            display: flex;
+        }
+        span{
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: rgb(277, 277, 277, 0.6);
+            transform: translate(-50%, -50%);
+            font-size: 6.5vw;
+            text-shadow: 4px 4px 14px rgb(277, 277, 277, 0.9);
+            cursor: pointer;
+        }
+    }
+    .imprint-credits{
+        position: absolute;
+        left: 48px;
+        bottom: 48px;
+        display: flex;
+        color: white;
+        gap: 10px;
+        flex-direction: column;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: rgb(0, 0, 0,0.4);
+        border-radius: 10px;
+        padding: 5px;
+        .imprint-text{
+            &:hover{
+                color: rgb(151, 183, 183);
+            }
+        }
+    } 
+}
+.imprint-page{
+    position: absolute;
+    display: flex;
+    left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    justify-content: center;
+    color: white;
+    width: 280px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0, 0.7);
+    font-size: 15px;
+    transition: all 225ms ease-in-out;
+    transform: translateX(-400px);
+}
+.showImp{
+    transform: translateX(0);
+}
+h2{
+    font-size: 30px;
+}
+
+//********************************************* mobile screen *****************************************
+@media only screen and (max-width: 900px){
+    .start-screen{
+        padding-left: 20vw;
+    }
+}
+@media only screen and (max-width: 600px){
+    .imprint-page{
+        width: 200px;
+        font-size: 12px;
+    }
+}

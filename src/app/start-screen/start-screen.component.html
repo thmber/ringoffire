@@ -1,0 +1,27 @@
+<!-- this is the start-screen html - the imprint and credits can be shown as a slide-in -->
+<div class="start-screen">
+    <div (mouseenter)="showStartMessage()" class="bottle-cap" >
+        <img src="./assets/img/cap.png" alt="">
+        @if(startMessageShown){
+            <span (click)="newGame()">Start</span>
+        }
+    </div>
+    <div class="imprint-credits">
+        <div class="imprint-text" (click)="showImprintOverlay()">Impressum / Credits</div>
+    </div>
+    <div class="imprint-page" [ngClass]="{'showImp': showImprint == true}">
+        <h2>Impressum</h2>
+        <p>Anbieter: Thomas Mahler</p>
+        <p>Weserstraße 191</p>
+        <p>12045 Berlin</p>
+        <p>Webseite:</p>
+        <p>thomas-mahler.developerakademie.net</p>
+        <p>E-Mail: thmahler&#64;gmx.net</p>
+        <p>Phone: 0172-9162309</p>
+        <br><br>
+        <h2>Credits</h2>
+        <p><a href="https://www.vecteezy.com/free-vector/hand-drawn-avatar">Profile pics by Vecteezy</a></p>
+        <p><a href="https://www.cleanpng.com/png-absolut-vodka-liquor-cocktail-whiskey-absolut-rasp-6375567/download-png.html">Bottle Images by Cleanpng</a></p>
+    </div>
+</div>
+

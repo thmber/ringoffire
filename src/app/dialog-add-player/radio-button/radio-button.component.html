@@ -1,0 +1,13 @@
+
+<!-- this component is part of the dialog to add player and shows the profile-pic-options -->
+<!-- by input passData, a method in the ts is triggered, to pass the selected profile to the parent-component -->
+
+<mat-radio-group aria-label="Select an option"
+        class="profile-selection-section" [(ngModel)]="pickedProfile">
+    @for(count of [1, 2, 3, 4, 5, 6, 7, 8, 9]; track count){
+        <div class="image-box-dialog">
+            <img src="./assets/img/profilepic/{{ count }}.png" alt="">
+            <mat-radio-button (input)="passData()" value="{{ count }}" color="primary"></mat-radio-button>
+        </div>
+    }
+</mat-radio-group>

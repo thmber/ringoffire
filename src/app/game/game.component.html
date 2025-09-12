@@ -1,0 +1,39 @@
+<!-- this is the main html component of the playing html-site. -->
+
+<div class="field">
+    <div class="card-stack">
+        <!-- here the stack of cards is build -->
+        @for(count of [0, 1, 2, 3]; track count){
+            <img [ngStyle]="{'right.px': count*12}" class="first-cards" src="./assets/img/cards/card_cover.png" alt="">
+        } 
+        <!-- here the illusion of a picked card is created -->
+        <img (click)="takeCard()" class="top-card" style="right: 48px" src="./assets/img/cards/card_cover.png" alt="">
+        @for(card of game.playedCards; track card){
+            <img class="picked-card-stack" src="./assets/img/cards/{{ card }}.png" alt="">
+        }
+        <!-- this is the chosen card on the card stack -->
+        @if(pickedCard){
+            <img (click)="takeCard()" class="pic-card" style="right: 48px" 
+            src="./assets/img/cards/{{ currentCard }}.png" alt="">
+        }
+    </div>
+    <!-- the game info is the display of game rules, when a player has picked a card -->
+    <app-game-info class="game-info" [playerCount]=game.players.length
+        [card]=currentCard> 
+    </app-game-info>
+            <!-- depending on the number of players, the players are displayed 
+            informations are give to the child component to determine which player is active
+            what profile Pic was chosen-->
+            @for(player of game.players; track player; let i = $index){
+                <app-player class="player-box" [name]=player 
+                    [playerActive]="i == game.currentPlayer"
+                    [profilePic]=game.playerProfilePics[i]
+                    [background]=game.playerBottlePicture[i] [position]=i
+                    [ngStyle]="{'top.px': i * 35 +15}"></app-player>
+                }
+    
+</div>
+<!-- this is the button to add a player -->
+<button mat-fab (click)="openDialog()" color="primary" class="button-add">
+    <mat-icon>+</mat-icon>
+</button>

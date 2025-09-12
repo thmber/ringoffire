@@ -1,0 +1,137 @@
+.field{
+    background: url(./../../assets/img/wooden_background.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button:focus{
+    display: none;
+}
+.card-stack{
+    position: absolute;
+    img{
+        width: 140px;
+        position: absolute;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px rgb(0, 0, 0, 0.4);
+    }
+}
+.top-card{
+    z-index: 10;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+    animation: flyin 300ms ease-in-out;
+    animation-delay: 900ms;
+    &:hover{
+        transform: scale(1.1) translateY(-10px);
+    }
+}
+.picked-card-stack{
+    right: 48px;
+    transform: scale(1.2) translateX(200px) translateY(-200px);
+}
+.pic-card{
+    z-index: 11;
+    animation: picked-card-animation 600ms ease-in-out;
+    transform: scale(1.2) translateX(200px) translateY(-200px);
+    box-shadow: 2px 2px 3px rgb(0, 0, 0, 0.4);
+}
+.player-box{
+    position: absolute;
+    width: 100%;
+}
+.button-add{
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+}
+.game-info{
+    position: absolute;
+    bottom: 20px;
+    margin-left: 32px;
+    margin-right: 96px;
+}
+.d-none{
+    display: none;
+}
+
+// *********************************************************  animations *****************************************
+
+@keyframes picked-card-animation {
+    0%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(1.7);
+    }
+    50%{
+        transform: scale(1.7);
+    }
+    100%{
+        transform: scale(1.2) translateX(200px) translateY(-200px);
+    }
+}
+
+// *************************************************      mobile screens     ********************************************
+ 
+@media only screen and (max-width: 1100px){
+    .picked-card-stack{
+        right: 48px;
+        transform: scale(1.2) translateX(80px) translateY(-220px);
+    }
+    .pic-card{
+        animation: picked-card-animation-small 600ms ease-in-out;
+        transform: scale(1.2) translateX(80px) translateY(-220px);
+        box-shadow: 2px 2px 3px rgb(0, 0, 0, 0.4);
+    }   
+    @keyframes picked-card-animation-small {
+        0%{
+            transform: scale(1);
+        }
+        40%{
+            transform: scale(1.7);
+        }
+        50%{
+            transform: scale(1.7);
+        }
+        100%{
+            transform: scale(1.2) translateX(80px) translateY(-220px);
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    .card-stack{
+        img{
+            width: 100px;
+        }
+    }
+}
+@media only screen and (max-width: 650px){
+    .picked-card-stack{
+        right: 48px;
+        transform: scale(1.1) translateX(150px) translateY(-40px);
+    }
+    .pic-card{
+        animation: picked-card-animation-even-smaller 600ms ease-in-out;
+        transform: scale(1.1) translateX(150px) translateY(-40px);
+        box-shadow: 2px 2px 3px rgb(0, 0, 0, 0.4);
+    } 
+    @keyframes picked-card-animation-even-smaller{
+        0%{
+            transform: scale(1);
+        }
+        40%{
+            transform: scale(1.5);
+        }
+        50%{
+            transform: scale(1.5);
+        }
+        100%{
+            transform: scale(1.1) translateX(150px) translateY(-40px);
+        }
+    }
+}

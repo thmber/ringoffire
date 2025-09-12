@@ -1,0 +1,16 @@
+.image-box-dialog {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.profile-selection-section {
+    display: flex;
+    justify-content: center;
+    width: 240px;
+    flex-wrap: wrap;
+}

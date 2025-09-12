@@ -1,0 +1,17 @@
+<!-- this section is the material design html-component for the add player dialog -->
+
+<h2 mat-dialog-title>Add New Player</h2>
+<mat-dialog-content>
+    <p>What's your name?</p>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" maxlength="8"/>
+    </mat-form-field>
+         <app-radio-button (receiveMessage)="receiveMessage($event)"></app-radio-button>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="">No Thanks</button>
+    <button mat-button [disabled]="name.length == 0"  [mat-dialog-close]="name">Ok</button>
+</mat-dialog-actions>
+
+
