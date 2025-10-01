@@ -1,7 +1,7 @@
 <!-- this is the main html component of the playing html-site. -->
 
 <div class="field">
-    <div class="card-stack">
+    <main class="card-stack">
         <!-- here the stack of cards is build -->
         @for(count of [0, 1, 2, 3]; track count){
             <img [ngStyle]="{'right.px': count*12}" class="first-cards" src="./assets/img/cards/card_cover.png" alt="">
@@ -16,7 +16,7 @@
             <img (click)="takeCard()" class="pic-card" style="right: 48px" 
             src="./assets/img/cards/{{ currentCard }}.png" alt="">
         }
-    </div>
+    </main>
     <!-- the game info is the display of game rules, when a player has picked a card -->
     <app-game-info class="game-info" [playerCount]=game.players.length
         [card]=currentCard> 
