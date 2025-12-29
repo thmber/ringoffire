@@ -1,6 +1,6 @@
 <!-- this is the start-screen html - the imprint and credits can be shown as a slide-in -->
 <div class="start-screen">
-    <div (mouseenter)="showStartMessage()" class="bottle-cap" >
+    <div (mouseenter)="showStartMessage(); playTurnCap()" class="bottle-cap" (mouseleave)="stopTurnCap()">
         <img src="./assets/img/cap.png" alt="">
         @if(startMessageShown){
             <span (click)="newGame()">Start</span>

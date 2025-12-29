@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,10 +13,27 @@ export class StartScreenComponent {
 
   startMessageShown = false;
   showImprint = false;
+  capSound = new Audio('./assets/sounds/cap.mp3');
+
   
   constructor(private router: Router) {
+  
   }
   
+  playTurnCap(){
+    this.capSound.play();
+    setTimeout(() => {
+      this.capSound.pause()
+    }, 400);
+  }
+
+  stopTurnCap(){
+      this.capSound.play();
+    setTimeout(() => {
+      this.capSound.pause()
+    }, 400);
+  }
+
   /**
    * this function navigates to the game site
    */
